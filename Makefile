@@ -4,7 +4,7 @@ source_files = $(wildcard *.c) # все исходные файлы в теку�
 obj_files = $(patsubst %.c,%.o,$(filter-out $(dinamic),$(source_files))) # .o файлы которые будут скомпилированы без флага -fPIC
 dinamic_obj = $(patsubst %.c,%.o,$(dinamic))# .o файлы с флагом -fPIC
 dinamic_libs =
-static_libs = $(patsubst %.c,%.a,$(filter-out $(dinamic),$(filter lib%.c,$(source_files))))	
+static_libs = $(patsubst %.c,%.a,$(filter-out $(dinamic),$(filter lib%.c,$(source_files)))) # считаем что имена файлов нач. с lib статич. библиотеки	
 dinamic_libs = $(patsubst %.o,%.so,$(dinamic_obj)) 
 ifneq ($(strip $(dinamic)),)
 DFLAGS=-Wl,-rpath,. # флаг чтобы при компановке программа знала откуда брать динам. библиотеки
