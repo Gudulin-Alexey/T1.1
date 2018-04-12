@@ -1,4 +1,4 @@
-extern int hellowworld();
+extern int helloworld();
 extern int goodbyeworld();
 
 int main()
