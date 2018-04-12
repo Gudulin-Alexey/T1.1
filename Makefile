@@ -1,5 +1,5 @@
 programm := hello
-dinamic = libgoodbye.c# переменная хранящая имена исходников которые нужно скомпилировать как для динамической библиотеки
+dinamic = #libgoodbye.c# переменная хранящая имена исходников которые нужно скомпилировать как для динамической библиотеки
 source_files = $(wildcard *.c) # все исходные файлы в текущей директории
 obj_files = $(patsubst %.c,%.o,$(filter-out $(dinamic),$(source_files))) # .o файлы которые будут скомпилированы без флага -fPIC
 dinamic_obj = $(patsubst %.c,%.o,$(dinamic))# .o файлы с флагом -fPIC
